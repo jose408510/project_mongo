@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ./partials/head %>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+      <ul class="nav nav-pills"> 
+        <li class="nav-item">
+            <a class="navbar-brand" href="#">Mongo Scraper</a>
+          </li>
+        <li class="nav-item ">
+            <button type="button" class="btn btn-outline-primary first">Saved Articles</button>
+          </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary btn-lg btn-danger">Scrape Articles</button>
+        </li>
+      </ul>
+    </nav>
+  <div class="row">
+    <div class="col-lg-12">
+        <img src="images/mongo_db.jpg" alt="New York" class="img-fluid" style="width:100%;">
+        <div class="centered">
+         <p>NewYork Times Scrapper</p> 
+        </div>
+      </div>
+  </div>
+      <div class="row">
+        <div class="col-lg-8 boxes">
+            <div class="card text-center">
+              <div class="card-header">
+                Featured
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"> yo</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+         </div>   
+      </div>
+
+
+  <div id="wrapper">
+    <h1>Note Scraper</h1>
+    <div id="articles"></div>
+    <div id="notes"></div>
+  </div>
+
+<footer>
+    <% include partials/footer %>
+</footer>
+</body>
+</html>
