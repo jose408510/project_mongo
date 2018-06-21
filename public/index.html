@@ -3,40 +3,38 @@
   <head>
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
-    <style>
-      body { background-color: #F2F6D0 }
-      #wrapper {
-        width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5%;
-      }
-      #articles {
-        display: inline-block;
-        overflow: auto;
-        width: 60%;
-        height: 700px;
-      }
-      #notes {
-        float: right;
-        width: 30%;
-      }
-      textarea, input {
-        display: block;
-        width: 100%;
-        background-color: #FCF5C7;
-      }
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-      textarea {
-        height: 200px;
-        font-size: 18px;
-      }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+      <nav class="navbar navbar-dark bg-primary">
+        <ul class="nav nav-pills"> 
+          <li class="nav-item">
+              <a class="navbar-brand" href="#">Mongo Scraper</a>
+            </li>
+          <li class="nav-item ">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+          <li class="nav-item ">
+              <a class="nav-link active" href="#">Saved Articles</a>
+            </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary btn-lg btn-danger">Scrape Articles</button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- <img src="..." class="img-fluid" alt="Responsive image"> -->
+    <div class="row">
+      <div class="col-lg-12">
+          <img src="/images/mongo_db.jpg" alt="New York" class="img-fluid" style="width:100%;">
+          <div class="centered">Centered</div>
+        </div>
+    </div>
+
+
+
+
     <div id="wrapper">
       <h1>Note Scraper</h1>
       <h2><i>If you can do this...the homework should be no problem.</i></h2>

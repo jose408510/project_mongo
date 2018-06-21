@@ -30,7 +30,6 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
 mongoose.connect("mongodb://localhost/theHomework", {
-  useMongoClient: true
 });
 
 // Routes
