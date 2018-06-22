@@ -31,7 +31,7 @@ app.set("view engine", "ejs")
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/theHomework", {
+mongoose.connect(MONGODB_URI = process.env.MONGODB_URI ||"mongodb://localhost/theHomework", {
 });
 
 // Routes
@@ -55,26 +55,19 @@ app.get("/scrape", function(req, res) {
       var result = {};
 
       // Add the text and href of every link, and save them as properties of the result object
-      result.title = $(this)
-        .children("a")
-        .text();
-      result.link = $(this)
-        .children("a")
-        .attr("href");
+      result.title = $(this).children("a").text();
+      result.link = $(this).children("a").attr("href");
 
       // Create a new Article using the `result` object built from scraping
       db.Article.create(result)
         .then(function(dbArticle) {
-          // View the added result in the console
           console.log(dbArticle);
         })
         .catch(function(err) {
-          // If an error occurred, send it to the client
           return res.json(err);
         });
+      res.render("scrape", links)
     });
-
-    // If we were able to successfully scrape and save an Article, send a message to the client
     res.send("Scrape Complete");
   });
 });
