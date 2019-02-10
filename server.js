@@ -30,20 +30,20 @@ app.set("view engine", "ejs")
 
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
 // Connect to the Mongo DB
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI = process.env.MONGODB_URI ||"mongodb://localhost/theHomework", {
-});
+// mongoose.Promise = Promise;
+mongoose.connect ( process.env.MONGODB_URI || "mongodb://localhost/theHomework",
+);
 
 // Routes
 
-app.get("/", function(req,res){
-  res.render("index")
-})
+// app.get("/", function(req,res){
+//   res.render("index")
+// })
 
 
 
 // A GET route for scraping the echojs website
-app.get("/scrape", function(req, res) {
+app.get("/", function(req, res) {
   // First, we grab the body of the html with request
   axios.get("http://www.echojs.com/").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
@@ -66,9 +66,11 @@ app.get("/scrape", function(req, res) {
         .catch(function(err) {
           return res.json(err);
         });
-      res.render("scrape", links)
-    });
-    res.send("Scrape Complete");
+        res.render("index")
+      });
+    // res.send("Scrape Complete");
+    // res.render("index")
+
   });
 });
 

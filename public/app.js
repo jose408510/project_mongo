@@ -10,7 +10,7 @@ $.getJSON("/articles", function(data) {
       + data[i].link + "</p>");
     }
   });
-  
+    
   
   // Whenever someone clicks a p tag
   $(document).on("click", "p", function() {
